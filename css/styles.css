@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px;
+}
+
+.page {
+  padding: 5vw;
+}
+
+.task {
+  padding: 0.2vw;
+}
+
+li {
+  padding: 0.2vw;
+}
+
+#gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gallery li {
+  width: 30%;
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
