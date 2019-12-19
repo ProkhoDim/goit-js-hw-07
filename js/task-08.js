@@ -1,9 +1,9 @@
 'use strict';
 
 const boxesElement = document.getElementById('boxes');
-let numberOfBoxes = Number(document.querySelector('#controls input').value);
 
-// const btn = document.querySelector('#controls button');s
+const createBtn = document.querySelector('[data-action="render"]');
+const destroyBtn = document.querySelector('[data-action="destroy"]');
 
 function randColor() {
   let r = Math.floor(Math.random() * 256),
@@ -12,7 +12,8 @@ function randColor() {
   return '#' + r.toString(16) + g.toString(16) + b.toString(16);
 }
 
-const createBoxes = function(amount) {
+const createBoxes = function() {
+  let amount = Number(document.querySelector('#controls input').value);
   console.log(amount, 'click');
   for (let i = 0; i < amount; i++) {
     boxesElement.insertAdjacentHTML(
@@ -23,9 +24,9 @@ const createBoxes = function(amount) {
   }
 };
 
-const createBtn = document.querySelector('button[data-action="render"]');
+const destroyBoxes = function() {
+  boxesElement.innerHTML = '';
+};
 
-const destroyBtn = document.querySelector('[data-action="destroy"]');
-console.log(numberOfBoxes);
 createBtn.addEventListener('click', createBoxes);
-destroyBtn.addEventListener('click', console.log('destroy'));
+destroyBtn.addEventListener('click', destroyBoxes);
